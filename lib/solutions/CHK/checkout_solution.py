@@ -4,6 +4,8 @@ skus = "EEEBBAAAAAAAAA"
 
 # skus = "FFFFFF"
 
+skus = "A"
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -99,16 +101,16 @@ def checkout(skus):
         basket2 = basket
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
-            # try:
-            for key in keys:
-                print(key)
-                if basket2[key] > offer["items"][key]:
+            try:
+                for key in keys:
+                    print(key)
+                    if basket2[key] > offer["items"][key]:
 
-                    basket2[key] = basket2[key] - offer["items"][key]
-                    print(basket2)
+                        basket2[key] = basket2[key] - offer["items"][key]
+                        print(basket2)
 
-            # except:
-            #     pass
+            except:
+                pass
         return
             
             
@@ -124,4 +126,5 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
