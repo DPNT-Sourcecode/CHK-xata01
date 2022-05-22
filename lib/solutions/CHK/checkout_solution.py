@@ -1,18 +1,20 @@
-skus = "AABBBBBAAAB"
+skus = "EEBAAAAAAAAA"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
     price = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
-    letters = list(price.keys())
+    item = list(price.keys())
 
     total = 0
 
+    free_Bs = 0
+
     for s in skus:
-        if s not in letters:
+        if s not in item:
             return(-1)
 
-    for s in letters:
+    for s in item:
         count = skus.count(s)
         
         if s == "A":
@@ -28,8 +30,11 @@ def checkout(skus):
             # non_offers = count % 3
             # total += non_offers * price[s]
 
+        elif s == "E":
+            free_Bs = count // 2
+
         elif s == "B":
-            offers = count // 2
+            offers = (count // 2) - free_Bs
             total += offers * 45
             non_offers = count % 2
             total += non_offers * price[s]
@@ -37,7 +42,8 @@ def checkout(skus):
         else:
             total += count * price[s]
 
-    return(total)
+    print(total)
 
 checkout(skus)
+
 
