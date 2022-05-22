@@ -105,6 +105,9 @@ def checkout(skus):
 
                 attempts += 1
 
+
+# get valid offers each time basket reduces and re-evaluate savings on each discount
+
         if len(valid_offers) > 0:
 
             subtotal += offers[valid_offers[0]]["price"]
@@ -125,4 +128,5 @@ def checkout(skus):
 
 
 # checkout(skus)
+
 
