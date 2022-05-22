@@ -18,7 +18,6 @@ def checkout(skus):
 
     for s in item:
         count = skus.count(s)
-
         
         if s == "A":
             offer1s = count // 5
@@ -48,4 +47,5 @@ def checkout(skus):
     return(total)
 
 # checkout(skus)
+
 
