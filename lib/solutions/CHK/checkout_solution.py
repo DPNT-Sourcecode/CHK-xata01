@@ -101,20 +101,26 @@ def checkout(skus):
                 
                 attempts += 1
 
-            print('=======')
-            print(basket)
-            print(valid_offers)
-            print('=======')
+        print('=======')
+        print(basket)
+        print(valid_offers)
+        print('=======')
 
-            subtotal += offers[valid_offers[0]]["price"]
-            print(subtotal)
-            return
+        subtotal += offers[valid_offers[0]]["price"]
+
+        for item, count in offers[valid_offers[0]]["items"].items():
+            print(item, count)
+            basket[item] = basket[item] - count
+        print(subtotal)
+        print(basket)
+    return
 
 
 
 
 
 checkout(skus)
+
 
 
 
