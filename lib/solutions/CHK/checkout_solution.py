@@ -32,6 +32,8 @@ def checkout(skus):
 
         elif s == "E":
             free_Bs = count // 2
+            print(free_Bs)
+            total += count * price[s]
 
         elif s == "B":
             offers = (count // 2) - free_Bs
@@ -45,5 +47,6 @@ def checkout(skus):
     print(total)
 
 checkout(skus)
+
 
 
