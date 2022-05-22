@@ -77,11 +77,12 @@ def checkout(skus):
         ]
 
     offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
-    print(offers_sorted)
+    # print(offers_sorted)
 
     for offer in offers:
         for i in offer["items"]:
-            offer[i] = 1
+            count = offer["items"].count(i)
+            offer[i] = count
 
     print(offers)
 
@@ -93,3 +94,4 @@ def checkout(skus):
    
 
 checkout(skus)
+
