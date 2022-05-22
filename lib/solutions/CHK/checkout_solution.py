@@ -3,7 +3,7 @@
 skus = "EEEEBBAAA"
 # skus = "FFFFFF"
 # skus = "AAAEEB"
-# skus = "AAAAA"
+skus = "AAAAA"
 
 # skus = "B"
 
@@ -104,14 +104,27 @@ def checkout(skus):
         print(valid_offers)
         print('=======')
 
-        subtotal += offers[valid_offers[0]]["price"]
+        if len(valid_offers) > 0:
 
-        for item, count in offers[valid_offers[0]]["items"].items():
-            print(item, count)
-            basket[item] = basket[item] - count
-        print(subtotal)
-        print(basket)
-        counter = sum(basket.values())
+            subtotal += offers[valid_offers[0]]["price"]
+
+            for item, count in offers[valid_offers[0]]["items"].items():
+                print(item, count)
+                basket[item] = basket[item] - count
+            print(subtotal)
+            print(basket)
+            counter = sum(basket.values())
+
+        else:
+            for item, count in basket.items():
+                subtotal += items[item] * count
+                basket[item] = basket[item] - count
+
+            print(subtotal)
+            print(basket)
+            counter = sum(basket.values())
+
+
     return(subtotal)
 
 
@@ -119,6 +132,7 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
 
