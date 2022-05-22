@@ -74,9 +74,41 @@ def checkout(skus):
     counter = sum(basket.values())
     total = 0
 
+    while counter != 0:
+
+        valid_offers = []
+        attempts = 0
+
+        while attempts == 0:
+            for offer in offers_sorted:
+
+                items_in_offer = len(offers[offer]["items"])
+                check = 0
+
+                for item, count in offers[offer]["items"].items():
+                    print(item, count)
+
+                    try:
+                        if offers[offer]["items"][item] <= basket[item]:
+                            check += 1
+                    except:
+                        pass
+
+                    print(items_in_offer)
+                    print(check)
+
+                    if check == items_in_offer:
+                        valid_offers.append(offer)
+
+                    print('---')
+                print(valid_offers)
+                attempts += 1
+
+            print(attempts)
+            return
+
 
 
 
 
 checkout(skus)
-
