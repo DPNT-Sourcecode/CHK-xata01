@@ -67,6 +67,7 @@ def checkout(skus):
 
 
     basket = {}
+    subtotal = 0
 
     for i in skus:
         count = skus.count(i)
@@ -100,10 +101,13 @@ def checkout(skus):
                 
                 attempts += 1
 
-
+            print('=======')
             print(basket)
             print(valid_offers)
-            print(attempts)
+            print('=======')
+
+            subtotal += offers[valid_offers[0]]["price"]
+            print(subtotal)
             return
 
 
@@ -111,5 +115,6 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
