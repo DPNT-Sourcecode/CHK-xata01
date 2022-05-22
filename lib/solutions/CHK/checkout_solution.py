@@ -7,54 +7,38 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    price = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40, "F": 10}
-    # item = list(price.keys())
-    item = "AEBCDF"
+    items = {
+        "A": 50,
+        "B": 30,
+        "C": 20,
+        "D": 15,
+        "E": 40,
+        "F": 10,
+        "G": 20,
+        "H": 10,
+        "I": 35,
+        "J": 60,
+        "K": 80,
+        "L": 90,
+        "M": 15,
+        "N": 40,
+        "O": 10,
+        "P": 50,
+        "Q": 30,
+        "R": 50,
+        "S": 30,
+        "T": 20,
+        "U": 40,
+        "V": 50,
+        "W": 20,
+        "X": 90,
+        "Y": 10,
+        "Z": 50
+    }
 
-    total = 0
-    free_Bs = 0
-
-    for s in skus:
-        if s not in item:
-            return(-1)
-
-    for s in item:
-        count = skus.count(s)
-        
-        if s == "A":
-            offer1s = count // 5
-            total += offer1s * 200
-            offer2s = (count % 5) // 3
-            total += offer2s * 130
-            non_offers = (count % 5) % 3
-            total += non_offers * price[s]
-
-        elif s == "E":
-            free_Bs = count // 2
-            total += count * price[s]
-
-        elif s == "B":
-            new_count = count - free_Bs
-            if new_count < 0:
-                pass
-            else:
-                offers = new_count // 2
-                total += offers * 45
-                non_offers = new_count % 2
-                total += non_offers * price[s]
-
-        elif s == "F":
-            offers = count // 3
-            total += offers * 20
-            non_offers = count % 3
-            total += non_offers * price[s]
-
-        else:
-            total += count * price[s]
-
-    return(total)
+    offers = {
+    
+    }
+   
 
 # checkout(skus)
-
-
-
