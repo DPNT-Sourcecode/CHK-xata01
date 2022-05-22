@@ -115,7 +115,15 @@ def checkout(skus):
                 pass
 
         basket = temp_basket
+        print('cycles')
         counter = sum(basket.values())
+
+        # if counter 
+
+        for item in basket:
+            print(item)
+
+
         # print(basket)
         # print(counter)
         # print(total)
@@ -137,4 +145,5 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
