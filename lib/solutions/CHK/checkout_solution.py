@@ -98,7 +98,7 @@ def checkout(skus):
 
     counter = sum(basket.values())
 
-    # print(offers_sorted)
+    print(offers_sorted)
     # print(basket)
     total = 0
     offers_used = 0
@@ -131,6 +131,7 @@ def checkout(skus):
                     pass
 
                 if check == len(keys):
+                    print(total)
                     total += offer["price"]
                     print(total)
                     offers_used += 1
@@ -169,3 +170,4 @@ def checkout(skus):
    
 
 checkout(skus)
+
