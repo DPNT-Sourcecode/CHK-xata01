@@ -5,7 +5,7 @@
 # skus = "AAAEEB"
 skus = "AAAAA"
 
-# skus = "B"
+skus = "B"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -86,7 +86,7 @@ def checkout(skus):
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
             check = 0
-            temp_basket = {}
+            temp_basket = basket
             leave_loop = False
             remaining_items = 0
 
@@ -96,8 +96,11 @@ def checkout(skus):
             for key in keys:
                 try:
                     if temp_basket[key] >= offer["items"][key]:
+                        print(basket)
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
+                        print('change')
+                        print(basket)
 
                 except:
                     pass
@@ -127,6 +130,7 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
 
