@@ -61,10 +61,6 @@ def checkout(skus):
             offer["items"][n] = count
 
     offers_sorted = sorted(offers, key=lambda item: offers[item]["saving"], reverse=True)
-    
-    print(offers)
-    print(offers_sorted)
-
 
     basket = {}
     subtotal = 0
@@ -99,20 +95,12 @@ def checkout(skus):
 
                 attempts += 1
 
-        print('=======')
-        print(basket)
-        print(valid_offers)
-        print('=======')
-
         if len(valid_offers) > 0:
 
             subtotal += offers[valid_offers[0]]["price"]
 
             for item, count in offers[valid_offers[0]]["items"].items():
-                print(item, count)
                 basket[item] = basket[item] - count
-            print(subtotal)
-            print(basket)
             counter = sum(basket.values())
 
         else:
@@ -120,10 +108,7 @@ def checkout(skus):
                 subtotal += items[item] * count
                 basket[item] = basket[item] - count
 
-            print(subtotal)
-            print(basket)
             counter = sum(basket.values())
-
 
     return(subtotal)
 
@@ -132,6 +117,7 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
 
