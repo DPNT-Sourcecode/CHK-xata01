@@ -2,12 +2,14 @@
 
 # skus = "EE"
 
+# skus = "FFFFFF"
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    price = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
+    price = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40, "F": 10}
     # item = list(price.keys())
-    item = "AEBCD"
+    item = "AEBCDF"
 
     total = 0
     free_Bs = 0
@@ -41,11 +43,18 @@ def checkout(skus):
                 non_offers = new_count % 2
                 total += non_offers * price[s]
 
+        elif s == "F":
+            offers = count // 3
+            total += offers * 20
+            non_offers = count % 3
+            total += non_offers * price[s]
+
         else:
             total += count * price[s]
 
     return(total)
 
 # checkout(skus)
+
 
 
