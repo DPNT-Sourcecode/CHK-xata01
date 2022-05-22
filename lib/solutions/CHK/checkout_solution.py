@@ -1,13 +1,8 @@
-skus = "EEEBBAAAAAAAAA"
-
-skus = "EEBAAAEEBA"
-
-skus = "EEEEBBAAA"
-
+# skus = "EEEBBAAAAAAAAA"
+# skus = "EEBAAAEEBA"
+# skus = "EEEEBBAAA"
 # skus = "FFFFFF"
-
 # skus = "AAAEEB"
-
 # skus = "AAAAA"
 
 # noinspection PyUnusedLocal
@@ -44,43 +39,21 @@ def checkout(skus):
 
     names = list(items.keys())
 
-    # offers = {
-    #     "AAA": {"price": 130, "saving": 20},
-    #     "AAAAA": {"price": 200, "saving": 50},
-    #     "EEB": {"price": 2*items["E"], "saving": items["B"]},
-    #     "FFF": {"price": 2*items["F"], "saving": items["F"]},
-    #     "HHHHH": {"price": 45, "saving": 5},
-    #     "HHHHHHHHHH": {"price": 80, "saving": 20},
-    #     "KK": {"price": 150, "saving": 10},
-    #     "NNNM": {"price": 3*items["N"], "saving": items["M"]},
-    #     "PPPPP": {"price": 200, "saving": 50},
-    #     "QQQ": {"price": 80, "saving": 10},
-    #     "RRRQ": {"price": 3*items["R"], "saving": items["Q"]},
-    #     "UUUU": {"price": 3*items["U"], "saving": items["U"]},
-    #     "VV": {"price": 90, "saving": 10},
-    #     "VVV": {"price": 130, "saving": 20},
-    # }
-    # offers = [
-    #     {"offer":"AAA", "price": 130, "saving": 20},
-    #     {"offer":"AAAAA", "price": 200, "saving": 50},
-    #     {"offer":"EEB", "price": 2*items["E"], "saving": items["B"]},
-    #     {"offer":"FFF", "price": 2*items["F"], "saving": items["F"]},
-    #     {"offer":"HHHHH", "price": 45, "saving": 5},
-    #     {"offer":"HHHHHHHHHH", "price": 80, "saving": 20},
-    #     {"offer":"KK", "price": 150, "saving": 10},
-    #     {"offer":"NNNM", "price": 3*items["N"], "saving": items["M"]},
-    #     {"offer":"PPPPP", "price": 200, "saving": 50},
-    #     {"offer":"QQQ", "price": 80, "saving": 10},
-    #     {"offer":"RRRQ", "price": 3*items["R"], "saving": items["Q"]},
-    #     {"offer":"UUUU", "price": 3*items["U"], "saving": items["U"]},
-    #     {"offer":"VV", "price": 90, "saving": 10},
-    #     {"offer":"VVV", "price": 130, "saving": 20},
-    # ]
-
     offers = [
         {"name":"AAA", "price": 130, "saving": 20},
         {"name":"AAAAA", "price": 200, "saving": 50},
         {"name":"EEB", "price": 2*items["E"], "saving": items["B"]},
+        {"name":"FFF", "price": 2*items["F"], "saving": items["F"]},
+        {"name":"HHHHH", "price": 45, "saving": 5},
+        {"name":"HHHHHHHHHH", "price": 80, "saving": 20},
+        {"name":"KK", "price": 150, "saving": 10},
+        {"name":"NNNM", "price": 3*items["N"], "saving": items["M"]},
+        {"name":"PPPPP", "price": 200, "saving": 50},
+        {"name":"QQQ", "price": 80, "saving": 10},
+        {"name":"RRRQ", "price": 3*items["R"], "saving": items["Q"]},
+        {"name":"UUUU", "price": 3*items["U"], "saving": items["U"]},
+        {"name":"VV", "price": 90, "saving": 10},
+        {"name":"VVV", "price": 130, "saving": 20},
         ]
 
     for s in skus:
@@ -139,23 +112,4 @@ def checkout(skus):
         offers_used_repeat = offers_used
 
 
-
-            
-            
-
-
-
-
-
-
-
-
-
-   
-
-checkout(skus)
-
-
-
-
-
+# checkout(skus)
