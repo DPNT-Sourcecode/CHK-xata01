@@ -87,7 +87,6 @@ def checkout(skus):
                 check = 0
 
                 for item, count in offers[offer]["items"].items():
-                    print(item, count)
 
                     try:
                         if offers[offer]["items"][item] <= basket[item]:
@@ -95,16 +94,15 @@ def checkout(skus):
                     except:
                         pass
 
-                    print(items_in_offer)
-                    print(check)
-
                     if check == items_in_offer:
                         valid_offers.append(offer)
 
-                    print('---')
-                print(valid_offers)
+                
                 attempts += 1
 
+
+            print(basket)
+            print(valid_offers)
             print(attempts)
             return
 
@@ -113,4 +111,5 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
