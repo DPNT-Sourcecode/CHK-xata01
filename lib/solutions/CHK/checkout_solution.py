@@ -77,13 +77,12 @@ def checkout(skus):
     total = 0
 
     while counter != 0:
-
         valid_offers = []
         attempts = 0
 
         while attempts == 0:
-            for offer in offers_sorted:
 
+            for offer in offers_sorted:
                 items_in_offer = len(offers[offer]["items"])
                 check = 0
 
@@ -98,7 +97,6 @@ def checkout(skus):
                     if check == items_in_offer:
                         valid_offers.append(offer)
 
-                
                 attempts += 1
 
         print('=======')
@@ -113,13 +111,15 @@ def checkout(skus):
             basket[item] = basket[item] - count
         print(subtotal)
         print(basket)
-    return
+        counter = sum(basket.values())
+    return(subtotal)
 
 
 
 
 
 checkout(skus)
+
 
 
 
