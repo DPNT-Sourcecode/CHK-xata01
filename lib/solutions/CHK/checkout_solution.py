@@ -18,6 +18,7 @@ def checkout(skus):
 
     for s in item:
         count = skus.count(s)
+
         
         if s == "A":
             offer1s = count // 5
@@ -29,6 +30,9 @@ def checkout(skus):
 
         elif s == "E":
             print('yes')
+            print(count)
+            print(price[s])
+            print(count * price[s])
             free_Bs = count // 2
             total += count * price[s]
 
@@ -42,14 +46,6 @@ def checkout(skus):
         else:
             total += count * price[s]
 
-    print(total)
+    # print(total)
 
-# checkout(skus)
-
-
-
-
-
-
-
-
+checkout(skus)
