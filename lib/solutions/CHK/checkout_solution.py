@@ -52,12 +52,27 @@ def checkout(skus):
         "VV": {"price": 90, "saving": 10},
         "VVV": {"price": 130, "saving": 20},
     }
+    # offers = [
+    #     {"offer":"AAA", "price": 130, "saving": 20}
+    #     {"offer":"AAAAA": "price": 200, "saving": 50},
+    #     {"offer":"EEB": "price": 2*items["E"], "saving": items["B"]},
+    #     {"offer":"FFF": "price": 2*items["F"], "saving": items["F"]},
+    #     {"offer":"HHHHH": "price": 45, "saving": 5},
+    #     {"offer":"HHHHHHHHHH": "price": 80, "saving": 20},
+    #     {"offer":"KK": "price": 150, "saving": 10},
+    #     {"offer":"NNNM": "price": 3*items["N"], "saving": items["M"]},
+    #     {"offer":"PPPPP": "price": 200, "saving": 50},
+    #     {"offer":"QQQ": "price": 80, "saving": 10},
+    #     {"offer":"RRRQ": "price": 3*items["R"], "saving": items["Q"]},
+    #     {"offer":"UUUU": "price": 3*items["U"], "saving": items["U"]},
+    #     {"offer":"VV": "price": 90, "saving": 10},
+    #     {"offer":"VVV": "price": 130, "saving": 20},
+    # ]
 
     offers_sorted = sorted(offers.items(), key=lambda item: item[1]["saving"], reverse=True)
-    # print(offers_sorted)
+    print(offers_sorted)
 
-    for offer in offers:
-        print(offer)
+
 
 
 
@@ -65,5 +80,6 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
