@@ -1,6 +1,6 @@
 skus = "EEEBBAAAAAAAAA"
 
-skus = "EEB"
+skus = "EEBAAAEEB"
 
 # skus = "FFFFFF"
 
@@ -105,7 +105,7 @@ def checkout(skus):
             try:
                 check = 0
                 for key in keys:
-                    if temp_basket[key] > offer["items"][key]:
+                    if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
 
@@ -118,6 +118,8 @@ def checkout(skus):
 
         basket = temp_basket
         counter = sum(basket.values())
+        values = basket.values()
+        print(values)
         print(basket)
         print(counter)
         print(total)
@@ -137,6 +139,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
