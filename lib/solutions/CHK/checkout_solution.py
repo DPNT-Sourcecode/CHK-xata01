@@ -1,9 +1,9 @@
 # skus = "EEEBBAAAAAAAAA"
 # skus = "EEBAAAEEBA"
-# skus = "EEEEBBAAA"
+skus = "EEEEBBAAA"
 # skus = "FFFFFF"
 # skus = "AAAEEB"
-skus = "AAAAA"
+# skus = "AAAAA"
 
 # skus = "B"
 
@@ -89,7 +89,6 @@ def checkout(skus):
             leave_loop = False
             remaining_items = 0
 
-
             for key in keys:
                 try:
                     if temp_basket[key] >= offer["items"][key]:
@@ -100,16 +99,12 @@ def checkout(skus):
                     pass
 
             if check == len(keys):
+                print('yes')
                 total += offer["price"]
                 offers_used += 1
-            #     leave_loop = True
 
-            # if leave_loop == True:
-            #     continue
             break
 
-        print(offers_used)
-        print(offers_used_repeat)
 
         if offers_used_repeat == offers_used:
             for key, value in basket.items():
@@ -119,12 +114,11 @@ def checkout(skus):
             print(total)
             return
 
-        print(offers_used)
-        print(offers_used_repeat)
 
         offers_used_repeat = offers_used
 
 
 checkout(skus)
+
 
 
