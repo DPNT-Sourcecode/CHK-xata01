@@ -43,6 +43,7 @@ def checkout(skus):
     offers = {
         "AAA": {"price": 130, "saving": 20},
         "AAAAA": {"price": 200, "saving": 50},
+        "BB": {"price": 45, "saving": 15},
         "EEB": {"price": 2*items["E"], "saving": items["B"]},
         "FFF": {"price": 2*items["F"], "saving": items["F"]},
         "HHHHH": {"price": 45, "saving": 5},
@@ -124,11 +125,3 @@ def checkout(skus):
 
 
 # checkout(skus)
-
-
-
-
-
-
-
-
