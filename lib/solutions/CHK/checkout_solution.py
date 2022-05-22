@@ -1,4 +1,4 @@
-skus = "EEEBBAAAAAAAAA"
+# skus = "EEEBBAAAAAAAAA"
 
 # skus = "EE"
 
@@ -99,8 +99,10 @@ def checkout(skus):
 
     while basket["item_count"] > 0:
         basket2 = basket
+        total = 0
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
+            print(keys)
             try:
                 for key in keys:
                     print(key)
@@ -126,5 +128,6 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
