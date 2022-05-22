@@ -122,6 +122,7 @@ def checkout(skus):
                     if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
+                        print(offer)
                         print('check' + key)
                         print(check)
                         print(len(keys))
@@ -131,6 +132,7 @@ def checkout(skus):
 
                 if check == len(keys):
                     total += offer["price"]
+                    print(total)
                     offers_used += 1
                     leave_loop = True
 
@@ -167,11 +169,3 @@ def checkout(skus):
    
 
 checkout(skus)
-
-
-
-
-
-
-
-
