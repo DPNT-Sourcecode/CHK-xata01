@@ -88,7 +88,8 @@ def checkout(skus):
             leave_loop = False
             remaining_items = 0
 
-            print(basket)
+            # print(basket)
+            print(offer)
 
             for key in keys:
                 try:
@@ -125,5 +126,6 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
