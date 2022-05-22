@@ -1,4 +1,3 @@
-skus = "AAAABBCDE"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -9,7 +8,6 @@ def checkout(skus):
 
     for s in skus:
         if s not in letters:
-            print(-1)
             return(-1)
 
     for s in letters:
@@ -30,10 +28,8 @@ def checkout(skus):
         else:
             total += count * price[s]
 
-    print(total)
+    return(total)
 
-
-checkout(skus)
 
 
 
