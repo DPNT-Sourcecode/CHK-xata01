@@ -3,9 +3,9 @@
 # skus = "EEEEBBAAA"
 # skus = "FFFFFF"
 # skus = "AAAEEB"
-# skus = "AAAAA"
+skus = "AAAAA"
 
-skus = "B"
+# skus = "B"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -80,27 +80,26 @@ def checkout(skus):
     offers_used = 0
     offers_used_repeat = -1
 
+    print(basket)
+
     while counter > 0:
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
             check = 0
-            temp_basket = basket
+            temp_basket = {}
             leave_loop = False
             remaining_items = 0
 
             # print(basket)
-            print(offer)
+            # print(offer)
 
             for key in keys:
                 try:
                     if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
-                        print(key)
-                        print(check)
-                        print(len(keys))
+
                 except:
-                    print('fail')
                     pass
 
             if check == len(keys):
@@ -128,6 +127,7 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
 
