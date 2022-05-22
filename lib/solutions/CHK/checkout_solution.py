@@ -102,8 +102,10 @@ def checkout(skus):
         
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
+            check = 0
+
             try:
-                check = 0
+                
                 temp_basket = basket
                 for key in keys:
                     if temp_basket[key] >= offer["items"][key]:
@@ -111,6 +113,7 @@ def checkout(skus):
                         check += 1
                     if check == len(keys):
                         total += offer["price"]
+                        break
             except:
                 pass
 
@@ -145,5 +148,6 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
