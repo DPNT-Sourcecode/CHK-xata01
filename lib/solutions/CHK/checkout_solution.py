@@ -130,13 +130,13 @@ def checkout(skus):
                 except:
                     pass
 
-                if check == len(keys):
-                    print(total)
-                    total += offer["price"]
-                    print(offer["price"])
-                    print(total)
-                    offers_used += 1
-                    leave_loop = True
+            if check == len(keys):
+                print(total)
+                total += offer["price"]
+                print(offer["price"])
+                print(total)
+                offers_used += 1
+                leave_loop = True
 
                 # except:
                 #     pass
@@ -144,15 +144,15 @@ def checkout(skus):
             if leave_loop == True:
                 continue
 
-            if offers_used_repeat == offers_used:
-                for key, value in basket.items():
-                    print("Yes")
-                    total += items[key] * value
-                counter = 0
-                basket = temp_basket
-                # return(total)
+        if offers_used_repeat == offers_used:
+            for key, value in basket.items():
+                print("Yes")
+                total += items[key] * value
+            counter = 0
+            basket = temp_basket
+            print(total)
 
-            offers_used_repeat = offers_used
+        offers_used_repeat = offers_used
 
 
         # return
@@ -172,5 +172,6 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
