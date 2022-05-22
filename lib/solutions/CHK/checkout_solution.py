@@ -41,34 +41,30 @@ def checkout(skus):
 
     names = list(items.keys())
 
-    offers = [
-        {"name":"AAA", "price": 130, "saving": 20},
-        {"name":"AAAAA", "price": 200, "saving": 50},
-        {"name":"EEB", "price": 2*items["E"], "saving": items["B"]},
-        # {"name":"FFF", "price": 2*items["F"], "saving": items["F"]},
-        # {"name":"HHHHH", "price": 45, "saving": 5},
-        # {"name":"HHHHHHHHHH", "price": 80, "saving": 20},
-        # {"name":"KK", "price": 150, "saving": 10},
-        # {"name":"NNNM", "price": 3*items["N"], "saving": items["M"]},
-        # {"name":"PPPPP", "price": 200, "saving": 50},
-        # {"name":"QQQ", "price": 80, "saving": 10},
-        # {"name":"RRRQ", "price": 3*items["R"], "saving": items["Q"]},
-        # {"name":"UUUU", "price": 3*items["U"], "saving": items["U"]},
-        # {"name":"VV", "price": 90, "saving": 10},
-        # {"name":"VVV", "price": 130, "saving": 20},
-        ]
+    offers = {
+        "AAA": {"price": 130, "saving": 20},
+        "AAAAA": {"price": 200, "saving": 50},
+        "EEB": {"price": 2*items["E"], "saving": items["B"]},
+        "FFF": {"price": 2*items["F"], "saving": items["F"]},
+
+    }
+
 
     for s in skus:
         if s not in names:
             return(-1)
 
-    for offer in offers:
-        offer["items"] = {}
-        for i in offer["name"]:
-            count = offer["name"].count(i)
-            offer["items"][i] = count
+    for name, offer in offers.items():
+        offers[name]["items"] = {}
+        for n in name:
+            count = name.count(n)
+            offer["items"][n] = count
 
-    offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
+    offers_sorted = sorted(offers, key=lambda item: offers[item]["saving"], reverse=True)
+    
+    print(offers_sorted)
+
+
     basket = {}
 
     for i in skus:
@@ -77,45 +73,10 @@ def checkout(skus):
 
     counter = sum(basket.values())
     total = 0
-    offers_used = 0
-    offers_used_repeat = -1
 
 
-    while counter > 0:
-        for offer in offers_sorted:
-            keys=(list(offer["items"].keys()))
-            check = 0
-            temp_basket = basket
-            leave_loop = False
-            remaining_items = 0
 
-            for key in keys:
-                try:
-                    if temp_basket[key] >= offer["items"][key]:
-                        temp_basket[key] = temp_basket[key] - offer["items"][key]
-                        check += 1
-
-                except:
-                    pass
-
-            if check == len(keys):
-                print('yes')
-                total += offer["price"]
-                offers_used += 1
-
-            break
-
-
-        if offers_used_repeat == offers_used:
-            for key, value in basket.items():
-                total += items[key] * value
-            counter = 0
-            basket = temp_basket
-            print(total)
-            return
-
-
-        offers_used_repeat = offers_used
 
 
 checkout(skus)
+
