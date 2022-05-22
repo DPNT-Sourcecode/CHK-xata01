@@ -110,7 +110,10 @@ def checkout(skus):
 
             if leave_loop == True:
                 print('true')
-                continue
+                break
+
+        print(offers_used)
+        print(offers_used_repeat)
 
         if offers_used_repeat == offers_used:
             for key, value in basket.items():
@@ -120,7 +123,11 @@ def checkout(skus):
             print(total)
             return
 
+        print(offers_used)
+        print(offers_used_repeat)
+
         offers_used_repeat = offers_used
 
 
 checkout(skus)
+
