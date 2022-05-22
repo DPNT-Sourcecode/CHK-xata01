@@ -104,7 +104,7 @@ def checkout(skus):
     offers_used = 0
     offers_used_repeat = -1
 
-    while counter != 0:
+    while counter > 0:
 
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
@@ -138,24 +138,13 @@ def checkout(skus):
                 counter = 0
                 print('0')
                 print(counter)
-                # return
+                basket = temp_basket
+                print(basket)
+                print(total)
+                # return(total)
 
             offers_used_repeat = offers_used
 
-
-        basket = temp_basket
-
-        # counter = sum(basket.values())
-
-        # if counter 
-
-        # for item in basket:
-        #     print(item)
-
-
-        # print(basket)
-        # print(counter)
-        # print(total)
 
         # return
     print(basket)
@@ -174,6 +163,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
