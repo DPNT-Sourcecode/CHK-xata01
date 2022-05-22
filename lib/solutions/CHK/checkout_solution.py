@@ -116,11 +116,15 @@ def checkout(skus):
 
             print(offer)
 
+
             for key in keys:
                 try:
                     if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
+                        print('check' + key)
+                        print(check)
+                        print(len(keys))
 
                 except:
                     pass
@@ -163,6 +167,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
