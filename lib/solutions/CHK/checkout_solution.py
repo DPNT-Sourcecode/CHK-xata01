@@ -98,14 +98,16 @@ def checkout(skus):
     print(basket)
 
     while counter > 0:
-        temp_basket = basket
+        
         total = 0
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
             try:
                 check = 0
+                temp_basket = basket
                 for key in keys:
                     if temp_basket[key] >= offer["items"][key]:
+                        print(temp_basket[key])
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
 
@@ -119,7 +121,6 @@ def checkout(skus):
         basket = temp_basket
         counter = sum(basket.values())
         values = basket.values()
-        print(values)
         print(basket)
         print(counter)
         print(total)
@@ -139,6 +140,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
