@@ -45,17 +45,17 @@ def checkout(skus):
         {"name":"AAA", "price": 130, "saving": 20},
         {"name":"AAAAA", "price": 200, "saving": 50},
         {"name":"EEB", "price": 2*items["E"], "saving": items["B"]},
-        {"name":"FFF", "price": 2*items["F"], "saving": items["F"]},
-        {"name":"HHHHH", "price": 45, "saving": 5},
-        {"name":"HHHHHHHHHH", "price": 80, "saving": 20},
-        {"name":"KK", "price": 150, "saving": 10},
-        {"name":"NNNM", "price": 3*items["N"], "saving": items["M"]},
-        {"name":"PPPPP", "price": 200, "saving": 50},
-        {"name":"QQQ", "price": 80, "saving": 10},
-        {"name":"RRRQ", "price": 3*items["R"], "saving": items["Q"]},
-        {"name":"UUUU", "price": 3*items["U"], "saving": items["U"]},
-        {"name":"VV", "price": 90, "saving": 10},
-        {"name":"VVV", "price": 130, "saving": 20},
+        # {"name":"FFF", "price": 2*items["F"], "saving": items["F"]},
+        # {"name":"HHHHH", "price": 45, "saving": 5},
+        # {"name":"HHHHHHHHHH", "price": 80, "saving": 20},
+        # {"name":"KK", "price": 150, "saving": 10},
+        # {"name":"NNNM", "price": 3*items["N"], "saving": items["M"]},
+        # {"name":"PPPPP", "price": 200, "saving": 50},
+        # {"name":"QQQ", "price": 80, "saving": 10},
+        # {"name":"RRRQ", "price": 3*items["R"], "saving": items["Q"]},
+        # {"name":"UUUU", "price": 3*items["U"], "saving": items["U"]},
+        # {"name":"VV", "price": 90, "saving": 10},
+        # {"name":"VVV", "price": 130, "saving": 20},
         ]
 
     for s in skus:
@@ -124,10 +124,3 @@ def checkout(skus):
 
 
 checkout(skus)
-
-
-
-
-
-
-
