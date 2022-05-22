@@ -98,10 +98,10 @@ def checkout(skus):
     while basket["item_count"] > 0:
         for offer in offers_sorted:
             print(offer)
-            print(list(offer["items"].keys()))
+            keys=(list(offer["items"].keys()))
             # try:
-            for item in offer["items"]:
-                print(item)
+            for key in keys:
+                print(key)
 
             # except:
             #     pass
@@ -120,6 +120,3 @@ def checkout(skus):
    
 
 checkout(skus)
-
-
-
