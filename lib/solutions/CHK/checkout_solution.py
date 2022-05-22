@@ -5,6 +5,8 @@
 # skus = "AAAEEB"
 # skus = "AAAAA"
 
+skus = "B"
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -91,6 +93,9 @@ def checkout(skus):
                     if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
+                        print(key)
+                        print(check)
+                        print(len(keys))
                 except:
                     pass
 
@@ -107,9 +112,11 @@ def checkout(skus):
                 total += items[key] * value
             counter = 0
             basket = temp_basket
-            return(total)
+            print(total)
+            return
 
         offers_used_repeat = offers_used
 
 
-# checkout(skus)
+checkout(skus)
+
