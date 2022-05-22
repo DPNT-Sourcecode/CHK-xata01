@@ -4,7 +4,8 @@ skus = "EEBAAAAAAAAA"
 # skus = unicode string
 def checkout(skus):
     price = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
-    item = list(price.keys())
+    # item = list(price.keys())
+    item = "AEBCD"
 
     total = 0
 
@@ -24,6 +25,7 @@ def checkout(skus):
             total += offer2s * 130
             non_offers = (count % 5) % 3
             total += non_offers * price[s]
+            print(total)
 
             # offers = count // 3
             # total += offers * 130
@@ -40,6 +42,7 @@ def checkout(skus):
             total += offers * 45
             non_offers = new_count % 2
             total += non_offers * price[s]
+            print(total)
 
             # offers = (count // 2) - free_Bs
             # total += offers * 45
@@ -48,10 +51,12 @@ def checkout(skus):
 
         else:
             total += count * price[s]
+            print(total)
 
     print(total)
 
 checkout(skus)
+
 
 
 
