@@ -71,15 +71,19 @@ def checkout(skus):
 
 
     offers = [
-        {"offer":"AAA", "price": 130, "saving": 20},
-        {"offer":"AAAAA", "price": 200, "saving": 50},
-        {"offer":"EEB", "price": 2*items["E"], "saving": items["B"]},
+        {"items":"AAA", "price": 130, "saving": 20},
+        {"items":"AAAAA", "price": 200, "saving": 50},
+        {"items":"EEB", "price": 2*items["E"], "saving": items["B"]},
         ]
-
-
 
     offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
     print(offers_sorted)
+
+    for offer in offers:
+        for i in offer["items"]:
+            offer[i] = 1
+
+    print(offers)
 
 
 
@@ -89,7 +93,3 @@ def checkout(skus):
    
 
 checkout(skus)
-
-
-
-
