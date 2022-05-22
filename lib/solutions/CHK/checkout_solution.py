@@ -119,6 +119,3 @@ def checkout(skus):
 
 
 checkout(skus)
-
-
-
