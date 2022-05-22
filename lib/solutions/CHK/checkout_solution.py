@@ -42,6 +42,8 @@ def checkout(skus):
         "Z": 50
     }
 
+    names = list(items.keys())
+
     # offers = {
     #     "AAA": {"price": 130, "saving": 20},
     #     "AAAAA": {"price": 200, "saving": 50},
@@ -75,12 +77,15 @@ def checkout(skus):
     #     {"offer":"VVV", "price": 130, "saving": 20},
     # ]
 
-
     offers = [
         {"name":"AAA", "price": 130, "saving": 20},
         {"name":"AAAAA", "price": 200, "saving": 50},
         {"name":"EEB", "price": 2*items["E"], "saving": items["B"]},
         ]
+
+    for s in skus:
+        if s not in names:
+            return(-1)
 
     for offer in offers:
         offer["items"] = {}
@@ -89,7 +94,6 @@ def checkout(skus):
             offer["items"][i] = count
 
     offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
-
     basket = {}
 
     for i in skus:
@@ -97,19 +101,14 @@ def checkout(skus):
         basket[i] = count
 
     counter = sum(basket.values())
-
-    print(offers_sorted)
-    # print(basket)
     total = 0
     offers_used = 0
     offers_used_repeat = -1
 
     while counter > 0:
-
         for offer in offers_sorted:
             keys=(list(offer["items"].keys()))
             check = 0
-
             temp_basket = basket
             leave_loop = False
             remaining_items = 0
@@ -119,7 +118,6 @@ def checkout(skus):
                     if temp_basket[key] >= offer["items"][key]:
                         temp_basket[key] = temp_basket[key] - offer["items"][key]
                         check += 1
-
                 except:
                     pass
 
@@ -127,9 +125,6 @@ def checkout(skus):
                 total += offer["price"]
                 offers_used += 1
                 leave_loop = True
-
-                # except:
-                #     pass
 
             if leave_loop == True:
                 continue
@@ -139,14 +134,12 @@ def checkout(skus):
                 total += items[key] * value
             counter = 0
             basket = temp_basket
-            print(total)
+            return(total)
 
         offers_used_repeat = offers_used
 
 
-        # return
-    # print(basket)
-    # print(total)
+
             
             
 
@@ -161,6 +154,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
