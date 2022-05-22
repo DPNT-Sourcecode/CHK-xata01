@@ -1,4 +1,4 @@
-# skus = "EEEBBAAAAAAAAA"
+skus = "EEEBBAAAAAAAAA"
 
 # skus = "EE"
 
@@ -37,8 +37,29 @@ def checkout(skus):
     }
 
     offers = {
-    
+        "AAA": {"price": 130, "saving": 20},
+        "AAAAA": {"price": 200, "saving": 50},
+        "EEB": {"price": 2*items["E"], "saving": items["B"]},
+        "FFF": {"price": 2*items["F"], "saving": items["F"]},
+        "HHHHH": {"price": 45, "saving": 5},
+        "HHHHHHHHHH": {"price": 80, "saving": 20},
+        "KK": {"price": 150, "saving": 10},
+        "NNNM": {"price": 3*items["N"], "saving": items["M"]},
+        "PPPPP": {"price": 200, "saving": 50},
+        "QQQ": {"price": 80, "saving": 10},
+        "RRRQ": {"price": 3*items["R"], "saving": items["Q"]},
+        "UUUU": {"price": 3*items["U"], "saving": items["U"]},
+        "VV": {"price": 90, "saving": 10},
+        "VVV": {"price": 130, "saving": 20},
     }
+
+    offers_sorted = sorted(offers.items(), key=lambda item: item[1]["price"])
+    print(offers_sorted)
+
+
+
+
    
 
-# checkout(skus)
+checkout(skus)
+
