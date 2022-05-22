@@ -100,9 +100,11 @@ def checkout(skus):
                         print(check)
                         print(len(keys))
                 except:
+                    print('fail')
                     pass
 
             if check == len(keys):
+                print('here')
                 total += offer["price"]
                 offers_used += 1
                 leave_loop = True
@@ -126,6 +128,7 @@ def checkout(skus):
 
 
 checkout(skus)
+
 
 
 
