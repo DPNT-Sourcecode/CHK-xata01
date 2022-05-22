@@ -1,4 +1,4 @@
-skus = "EEBAAAAAAAAA"
+# skus = "EEEBBAAAAAAAAA"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -8,7 +8,6 @@ def checkout(skus):
     item = "AEBCD"
 
     total = 0
-
     free_Bs = 0
 
     for s in skus:
@@ -25,17 +24,10 @@ def checkout(skus):
             total += offer2s * 130
             non_offers = (count % 5) % 3
             total += non_offers * price[s]
-            print(total)
-
-            # offers = count // 3
-            # total += offers * 130
-            # non_offers = count % 3
-            # total += non_offers * price[s]
 
         elif s == "E":
             free_Bs = count // 2
             total += count * price[s]
-            print(total)
 
         elif s == "B":
             new_count = count - free_Bs
@@ -43,20 +35,14 @@ def checkout(skus):
             total += offers * 45
             non_offers = new_count % 2
             total += non_offers * price[s]
-            print(total)
-
-            # offers = (count // 2) - free_Bs
-            # total += offers * 45
-            # non_offers = count % 2
-            # total += non_offers * price[s]
 
         else:
             total += count * price[s]
-            print(total)
 
-    print(total)
+    return(total)
 
-checkout(skus)
+# checkout(skus)
+
 
 
 
