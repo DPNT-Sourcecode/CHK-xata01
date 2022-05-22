@@ -62,6 +62,7 @@ def checkout(skus):
 
     offers_sorted = sorted(offers, key=lambda item: offers[item]["saving"], reverse=True)
     
+    print(offers)
     print(offers_sorted)
 
 
@@ -112,3 +113,4 @@ def checkout(skus):
 
 
 checkout(skus)
+
