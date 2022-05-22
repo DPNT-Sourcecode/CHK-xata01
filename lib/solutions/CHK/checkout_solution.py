@@ -53,8 +53,11 @@ def checkout(skus):
         "VVV": {"price": 130, "saving": 20},
     }
 
-    offers_sorted = sorted(offers.items(), key=lambda item: item[1]["price"])
-    print(offers_sorted)
+    offers_sorted = sorted(offers.items(), key=lambda item: item[1]["saving"], reverse=True)
+    # print(offers_sorted)
+
+    for offer in offers:
+        print(offer)
 
 
 
@@ -62,4 +65,5 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
