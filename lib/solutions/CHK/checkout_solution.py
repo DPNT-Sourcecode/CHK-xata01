@@ -76,21 +76,27 @@ def checkout(skus):
         {"items":"EEB", "price": 2*items["E"], "saving": items["B"]},
         ]
 
-    offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
 
     for offer in offers:
         for i in offer["items"]:
             count = offer["items"].count(i)
             offer[i] = count
 
+    offers_sorted = sorted(offers, key=lambda item: item["saving"], reverse=True)
+
+
     basket = {}
+
     for i in skus:
         count = skus.count(i)
         basket[i] = count
 
+    basket["item_count"] = sum(basket.values())
 
     print(offers)
     print(basket)
+
+    # for offer in offers:
 
 
 
@@ -100,5 +106,6 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
