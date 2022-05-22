@@ -4,7 +4,7 @@ skus = "EEBAAAEEB"
 
 # skus = "FFFFFF"
 
-# skus = "A"
+skus = "AAAEEB"
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -104,18 +104,20 @@ def checkout(skus):
             keys=(list(offer["items"].keys()))
             check = 0
 
-            try:
+            # try:
                 
-                temp_basket = basket
-                for key in keys:
-                    if temp_basket[key] >= offer["items"][key]:
-                        temp_basket[key] = temp_basket[key] - offer["items"][key]
-                        check += 1
-                    if check == len(keys):
-                        total += offer["price"]
-                        break
-            except:
-                pass
+            temp_basket = basket
+            for key in keys:
+                if temp_basket[key] >= offer["items"][key]:
+                    temp_basket[key] = temp_basket[key] - offer["items"][key]
+                    check += 1
+
+
+                if check == len(keys):
+                    total += offer["price"]
+                    exit()
+            # except:
+            #     pass
 
         basket = temp_basket
         print('cycles')
@@ -148,6 +150,7 @@ def checkout(skus):
    
 
 checkout(skus)
+
 
 
 
